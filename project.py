@@ -35,6 +35,10 @@ while True:
     end_time = time.time()
     _, frm = cap.read()
     frm = cv2.flip(frm, 1)
+    frm = cv2.putText(frm, "Gesture Recognition",(150, 40),
+                      cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255), 2)
+    frm = cv2.putText(frm, "Frd:1, Rev:2, Vol Up:3, Vol Down:4, Play/Pause:5",(10, 450),
+                      cv2.FONT_HERSHEY_COMPLEX, 0.75, (26,23,38), 2)
 
     res = hand_obj.process(cv2.cvtColor(frm, cv2.COLOR_BGR2RGB))
 
